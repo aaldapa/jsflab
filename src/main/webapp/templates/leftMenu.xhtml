@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+ 
+	<ui:composition>
+		<h:form >
+		    <div class="col-sm-3 col-md-2 sidebar">
+		    
+		    	<ul class="nav nav-pills nav-stacked">
+			        <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i>Home</a></li>
+			        <li><a href="#"><i class="fa fa-list-alt fa-fw"></i>Widget</a></li>
+			        <li><a href="#"><i class="fa fa-file-o fa-fw"></i>Pages</a></li>
+			        <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Charts</a></li>
+			        <li><a href="#"><i class="fa fa-table fa-fw"></i>Table</a></li>
+			        <li>
+			        	<h:outputLink  value="#{request.contextPath}/pages/user/user-list.xhtml">
+				        	<i class="fa fa-users fa-fw"></i>Usuarios
+		 				</h:outputLink>
+			        </li>
+			        <li>
+			        	<h:commandLink action="#{userBean.doListUsers}">
+				        	<i class="fa fa-users fa-fw"></i>Usuarios bd
+		 				</h:commandLink>
+			        </li>
+			        <li><a href="#"><i class="fa fa-calendar fa-fw"></i>Calender</a></li>
+			        <li><a href="#"><i class="fa fa-book fa-fw"></i>Library</a></li>
+			        <li><a href="#"><i class="fa fa-pencil fa-fw"></i>Applications</a></li>
+			        <li><a href="#"><i class="fa fa-cogs fa-fw"></i>Settings</a></li>
+	
+		    	</ul>
+		    </div>
+		</h:form>
+	</ui:composition>
+
+</html>
+  

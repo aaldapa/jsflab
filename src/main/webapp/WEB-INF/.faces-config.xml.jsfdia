@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#pages#login.xhtml" PATH="/pages/login.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#login.xhtml:0" NAME="item"
+   PATH="/pages/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="entrar::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="entrar" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#*" PATH="/pages/*"
+  SHAPE="32,120,53,42" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#*:0" NAME="item" PATH="/pages/*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="userList::#pages#user#user-list.xhtml"
+    NAME="output" PATH="/pages/user/user-list.xhtml"
+    TARGET="rules:#pages#user#user-list.xhtml" TITLE="userList" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#user#user-list.xhtml"
+  PATH="/pages/user/user-list.xhtml" SHAPE="544,128,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#user#user-list.xhtml:0" NAME="item"
+   PATH="/pages/user/user-list.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="formulario::#pages#user#user.xhtml"
+    NAME="output" PATH="/pages/user/user.xhtml"
+    TARGET="rules:#pages#user#user.xhtml" TITLE="formulario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#user#user.xhtml"
+  PATH="/pages/user/user.xhtml" SHAPE="1024,128,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#user#user.xhtml:0" NAME="item"
+   PATH="/pages/user/user.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listado::#pages#user#user-list.xhtml"
+    NAME="output" PATH="/pages/user/user-list.xhtml"
+    TARGET="rules:#pages#user#user-list.xhtml" TITLE="listado" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#home.xhtml" PATH="/pages/home.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

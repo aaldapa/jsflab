@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">  
+      
+    <h:body>
+    	
+    	<ui:composition template="../../templates/main.xhtml">
+			<ui:define name="content">
+				
+				
+				<div class="row">
+				    <div class="col-md-8 col-md-offset-2">
+				      <h:form id="form" styleClass="form-horizontal"  role="form">
+				      	<h:inputHidden value="#{userBean.user.idUser}"></h:inputHidden>
+				      
+				        <fieldset>
+				
+				          <!-- Form Name -->
+				          <legend>Formulario de usuario</legend>
+				
+				          <!-- Text input-->
+				          <div class="form-group">
+				            <label class="col-sm-2 control-label" for="textinput">Nombre</label>
+				            <div class="col-sm-6">
+				              <h:inputText pt:placeholder="Nombre" class="form-control" label="Nombre" value="#{userBean.user.nombre}"/>
+				            </div>
+				          </div>
+				
+				          <!-- Text input-->
+				          <div class="form-group">
+				            <label class="col-sm-2 control-label" for="textinput">1º apellido</label>
+				            <div class="col-sm-6">
+				             <h:inputText pt:placeholder="1º apellido" class="form-control" label="1º apellido" value="#{userBean.user.apellido1}"/>
+				            </div>
+				          </div>
+				          
+				          <!-- Text input-->
+				          <div class="form-group">
+				            <label class="col-sm-2 control-label" for="textinput">2º apellido</label>
+				            <div class="col-sm-6">
+				              <h:inputText pt:placeholder="2º apellido" class="form-control" label="2º apellido" value="#{userBean.user.apellido2}"/>
+				            </div>
+				          </div>
+				
+				          <!-- Text input-->
+				          <div class="form-group">
+				            <label class="col-sm-2 control-label" for="textinput">Username</label>
+				            <div class="col-sm-4">
+				              <h:inputText pt:placeholder="Nombre de usuario" class="form-control" label="Password" value="#{userBean.user.username}" />
+				            </div>
+				
+				            <label class="col-sm-2 control-label" for="textinput">Password</label>
+				            <div class="col-sm-4">
+				               <h:inputSecret pt:placeholder="Clave" class="form-control" label="Password" value="#{userBean.user.password}"/>
+				            </div>
+				          </div>
+				
+				        </fieldset>
+				        
+				        <div class="btn-toolbar">
+	    					<div class="col-sm-offset-2 col-sm-10">
+				            	<div class="pull-right">
+		    						<h:commandLink action="#{userBean.doListUsers}" styleClass="btn btn-default" value="Volver"/> 
+		    						&nbsp;
+		    						#{userBean.user.idUser}
+				                	<h:commandButton styleClass="btn btn-primary" value="Guardar" action="#{userBean.doSaveUser}" rendered="#{empty userBean.user.idUser}"/>
+		    					</div>
+	    					</div>
+						</div>
+				     </h:form>
+				    </div><!-- /.col-lg-12 -->
+				</div><!-- /.row -->
+				
+			</ui:define>
+    	</ui:composition>
+    	
+    </h:body>
+
+</html>
