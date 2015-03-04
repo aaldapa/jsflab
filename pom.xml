@@ -28,6 +28,14 @@
     	<scope>provided</scope>
 	</dependency>
     
+    <!-- JSTL -->
+    <dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+    
+    
   	<!-- Faces Implementation -->
     <dependency>
         <groupId>com.sun.faces</groupId>
@@ -86,6 +94,7 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.31</version>
     </dependency>
+	
 	<!-- Log4j library -->
 	<dependency>
 	   <groupId>log4j</groupId>
@@ -99,6 +108,7 @@
         <artifactId>primefaces</artifactId>
         <version>5.0</version>
     </dependency>
+    
     <!-- Primefaces Theme Library -->
 <!--     <dependency> -->
 <!--   	 	<groupId>org.primefaces.themes</groupId> -->

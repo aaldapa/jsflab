@@ -37,17 +37,32 @@ public class UserController {
 	
 	private Boolean selectedRow;
 
-	
+	/**
+	 * Recibe el usuario al que pertenece el boton editar de la fila de la tabla y lo carga en el formulario 
+	 * @param usuario
+	 * @return
+	 */
 	public String doLoadForm(User usuario){
 		setUser(usuario);
 		return "formulario";
 	}
 	
+	/**
+	 * Toma el usuario seleccionado de la tabla al pulsar sobre el boton editar de la parte inferior de la tabla y lo carga en el formulario
+	 * @return
+	 */
 	public String doLoadForm(){
-		setUser(new User());
+		setUser(selectedUser);
 		return "formulario";
 	}
 	
+	/**
+	 * Carga un nuevo usuario en blanco en el formulario cuando se pulsa el boton nuevo
+	 * @return
+	 */
+	public String doNewForm(){
+		return "formulario";
+	}
 	
 	/**
 	 * Eliminar usuario mediante el "row boton" de la tabla
@@ -80,27 +95,26 @@ public class UserController {
 		return "userList";
 	}
 	
-    public void onRowSelect(SelectEvent event) {  
-//        FacesMessage msg = new FacesMessage("Usuario seleccionado", ((User) event.getObject()).getNombre());  
-//        FacesContext.getCurrentInstance().addMessage(null, msg); 
-//        
-    	selectedRow=true;
-    }  
-  
-    /**
+	/**
+	 * Al seleccionar una fila de la tabla llamamos a este metodo, que sirve para settear un atributo que es evaluado por los botones 
+	 * eliminar y modificar de la parte inferior de la tabla para saber cuando deben de ser renderizados
+	 * @param event
      * Los metodos que reciben una peticion Ajax de jsf deben recibir un objeto AjaxBehaviorEvent.
      * Las peticiones Ajax de primefaces reciben objetos mas especificos relacionados con el evento que los dispara, por ejemplo  en este cas, seria SelectEvent
-     * @param event
      */
     public void onRowSelect(AjaxBehaviorEvent event) {  
     	log.info(event);
-    	selectedRow=true;
+    	setSelectedRow(true);
   }  
 
-    
-    public void onRowUnselect(AjaxBehaviorEvent event) {  
-//        FacesMessage msg = new FacesMessage("Usuario deseleccionado", ((User) event.getObject()).getNombre());  
-//        FacesContext.getCurrentInstance().addMessage(null, msg);
+    /**
+	 * Al deseleccionar una fila de la tabla llamamos a este metodo, que sirve para settear un atributo que es evaluado por los botones 
+	 * eliminar y modificar de la parte inferior de la tabla para saber cuando deben de ser renderizados.
+	 * @param event
+     * Los metodos que reciben una peticion Ajax de jsf deben recibir un objeto AjaxBehaviorEvent.
+     * Las peticiones Ajax de primefaces reciben objetos mas especificos relacionados con el evento que los dispara, por ejemplo  en este cas, seria SelectEvent
+     */
+    public void onRowUnselect(AjaxBehaviorEvent event) {
     	selectedRow=false;
     }  
 	
