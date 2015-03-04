@@ -61,6 +61,7 @@ public class UserController {
 	 * @return
 	 */
 	public String doNewForm(){
+		setUser(new User());
 		return "formulario";
 	}
 	
